@@ -168,7 +168,6 @@ def backtrack(missing_pieces, used_positions):
     next_piece = missing_pieces.pop()
     for match in matches_by_piece[next_piece]:
         if are_positions_available(match, used_positions):
-            #missing_pieces.pop()
             for pos in match:
                 used_positions[pos] = next_piece
             if backtrack(missing_pieces, used_positions):
